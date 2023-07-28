@@ -1,5 +1,5 @@
 import React from "react";
-import { Frame, List } from "@react95/core";
+import { Modal, List } from "@react95/core";
 import { CdMusic } from "@react95/icons";
 
 function Music({ closeMusic, isMobile }) {
@@ -25,4 +25,4 @@ function Music({ closeMusic, isMobile }) {
   );
 }
 
-export default Tunes;
+export default Music;

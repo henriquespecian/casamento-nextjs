@@ -179,7 +179,7 @@ export default function Home() {
             <InsideModal bg="white" boxShadow="out" ref={ref}>
               <div>
                 <br />
-                <div class="hero">
+                <div className="hero">
                   <img
                     width={50}
                     height={50}

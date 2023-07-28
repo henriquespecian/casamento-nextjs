@@ -156,9 +156,9 @@ export default function Home() {
             style={{
               ...(isMobile
                 ? {
-                    top: '5%',
+                    top: '3%',
                     left: '5%',
-                    height: `calc(90% - ${TASKBAR_HEIGHT}px)`,
+                    height: `calc(94% - ${TASKBAR_HEIGHT}px)`,
                     width: '90%',
                     margin: 0,
                   }

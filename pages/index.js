@@ -4,6 +4,7 @@ import { Modal, List, Frame, TaskBar, Fieldset, Input, Button, ThemeProvider, Gl
 import styled from 'styled-components';
 
 import { Drvspace7, Issue, FilePin, Packager1, Mmsys112, Explorer108 } from "@react95/icons";
+import { getImagePath } from '../utils/image';
 
 const dataFormatada = function () {
   let _second = 1000;
@@ -139,9 +140,9 @@ export default function Home() {
             <div>
               <br></br>
               <div>
-                <img src="/image/heart.gif" className='heart'></img>
+                <img width={50} height={50} src={getImagePath("/image/heart.gif")} className='heart' />
                 <h1 className='titulo' >Monica & Henrique</h1>
-                <img src="/image/heart.gif" className='heart'></img>
+                <img src={getImagePath("/image/heart.gif")} className='heart' />
               </div>
               <br></br>
               <h2>São Paulo. 13 Abril 2024</h2>
@@ -187,7 +188,7 @@ export default function Home() {
               <a href="https://nubank.com.br/pagar/48wth/mGWKfQeR5q">
                 <img
                   className='image-center'
-                  src="/image/qrcode-pix.png"
+                  src={getImagePath("/image/qrcode-pix.png")}
                   alt="QrCode do Pix"
                   href="https://nubank.com.br/pagar/48wth/mGWKfQeR5q"
                 />

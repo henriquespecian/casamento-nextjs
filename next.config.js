@@ -9,6 +9,7 @@ const nextConfig = {
   images: {
     disableStaticImages: true,
   },
+  basePath: '/casamento-nextjs',
 };
 
 module.exports = withTM(withFonts(withImages(nextConfig)));

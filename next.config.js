@@ -5,11 +5,13 @@ const withTM = require('next-transpile-modules')([
   '@react95/icons',
 ]);
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
   images: {
     disableStaticImages: true,
   },
-  basePath: '/casamento-nextjs',
+  basePath: isProd ? '/casamento-nextjs' : undefined,
 };
 
 module.exports = withTM(withFonts(withImages(nextConfig)));

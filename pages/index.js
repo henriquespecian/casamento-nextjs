@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import {
   Modal,
@@ -22,6 +22,8 @@ import {
   Explorer108,
 } from '@react95/icons';
 import { getImagePath } from '../utils/image';
+import { TASKBAR_HEIGHT } from '../utils/constants';
+import { isMobileDevice } from '../utils/mobile';
 
 const dataFormatada = function () {
   let _second = 1000;
@@ -42,18 +44,29 @@ const dataFormatada = function () {
 const dataRegressiva = dataFormatada();
 
 const InsideModal = styled(Frame)`
-  overflow-y: 'auto';
   text-align: center;
-  max-height: 70vh;
-  max-width: 90vh;
   height: 100%;
   overflow: auto;
   padding: 20px;
+  box-shadow: none;
 `;
 
 export default function Home() {
   /* Spotify Modal */
   const [showSpotifyModal, setShowSpotifyModal] = useState(false);
+
+  const [isMobile, setIsMobile] = useState();
+
+  const ref = useRef(null);
+
+  useEffect(() => {
+    console.log({ is: isMobileDevice() });
+    setIsMobile(isMobileDevice());
+  }, [setIsMobile]);
+
+  useEffect(() => {
+    ref.current.parentElement.style.overflow = 'auto';
+  }, [ref.current]);
 
   const handleOpenSpotifyModal = useCallback(() => {
     setShowSpotifyModal(true);
@@ -136,10 +149,21 @@ export default function Home() {
         {/* Modal do Casamento */}
         {showCasamentoModal && (
           <Modal
-            className="modal"
+            className={!isMobile ? 'modal' : ''}
             title="Casamento.exe"
             closeModal={handleCloseCasamentoModal}
             icon={<Drvspace7 variant="32x32_4" />}
+            style={{
+              ...(isMobile
+                ? {
+                    top: '5%',
+                    left: '5%',
+                    height: `calc(90% - ${TASKBAR_HEIGHT}px)`,
+                    width: '90%',
+                    margin: 0,
+                  }
+                : {}),
+            }}
             menu={[
               {
                 name: 'Options',
@@ -153,7 +177,7 @@ export default function Home() {
               },
             ]}
           >
-            <InsideModal bg="white" boxShadow="out">
+            <InsideModal bg="white" boxShadow="out" ref={ref}>
               <div>
                 <br></br>
                 <div>
@@ -174,10 +198,11 @@ export default function Home() {
                 <br></br>
                 <br></br>
                 <img
-                  className="image-center"
+                  className="image-center couple"
                   src={getImagePath('/image/Monica_HenriquepxArt.png')}
                   alt="Monica & Henrique & Sophia"
                 />
+                <br></br>
                 <h2>Vamos nos casar!</h2>
                 <p>
                   O grande dia está chegando e não poderíamos estar mais
@@ -199,7 +224,7 @@ export default function Home() {
                 <h2>Endereco</h2>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.153255731116!2d-46.6552800236925!3d-23.526989660332237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59a6f0437e37%3A0xf08fb1dfb1c91838!2sA%20Casa%20de%20Babette!5e0!3m2!1spt-BR!2sbr!4v1689711470236!5m2!1spt-BR!2sbr"
-                  width="400"
+                  width={isMobile ? '210' : '400'}
                   height="300"
                   style={{ border: 0 }}
                   loading="lazy"

@@ -5,6 +5,12 @@
   margin-right: auto;
 }
 
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media only screen and (min-width: 960px) {
   .image-center {
     width: 50%;

@@ -60,7 +60,6 @@ export default function Home() {
   const ref = useRef(null);
 
   useEffect(() => {
-    console.log({ is: isMobileDevice() });
     setIsMobile(isMobileDevice());
   }, [setIsMobile]);
 
@@ -179,8 +178,8 @@ export default function Home() {
           >
             <InsideModal bg="white" boxShadow="out" ref={ref}>
               <div>
-                <br></br>
-                <div>
+                <br />
+                <div class="hero">
                   <img
                     width={50}
                     height={50}
@@ -189,38 +188,40 @@ export default function Home() {
                   />
                   <h1 className="titulo">Monica & Henrique</h1>
                   <img
+                    width={50}
+                    height={50}
                     src={getImagePath('/image/heart.gif')}
                     className="heart"
                   />
                 </div>
-                <br></br>
+                <br />
                 <h2>São Paulo. 13 Abril 2024</h2>
-                <br></br>
-                <br></br>
+                <br />
+                <br />
                 <img
                   className="image-center couple"
                   src={getImagePath('/image/Monica_HenriquepxArt.png')}
                   alt="Monica & Henrique & Sophia"
                 />
-                <br></br>
+                <br />
                 <h2>Vamos nos casar!</h2>
                 <p>
                   O grande dia está chegando e não poderíamos estar mais
                   animados para compartilhar com a nossa família e amigos um dos
                   dias mais especiais das nossas vidas!
                 </p>
-                <br></br>
+                <br />
                 <p>
                   Queremos muito sua presença neste dia tão importante com muita
                   festa, amor e carinho em uma comemoração que irá nos marcar
                   para sempre!
                 </p>
-                <br></br>
-                <br></br>
+                <br />
+                <br />
                 <h2>Faltam:</h2>
 
-                <br></br>
-                <br></br>
+                <br />
+                <br />
                 <h2>Endereco</h2>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.153255731116!2d-46.6552800236925!3d-23.526989660332237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59a6f0437e37%3A0xf08fb1dfb1c91838!2sA%20Casa%20de%20Babette!5e0!3m2!1spt-BR!2sbr!4v1689711470236!5m2!1spt-BR!2sbr"
@@ -234,14 +235,14 @@ export default function Home() {
                   Rua Anhanguera, 104, A Casa de Babette - Barra funda, São
                   Paulo - SP
                 </p>
-                <br></br>
-                <br></br>
+                <br />
+                <br />
                 <h2>Lista de Presentes</h2>
-                <br></br>
-                <br></br>
+                <br />
+                <br />
                 <p>Você pode fazer um pix direto pra gente</p>
-                <br></br>
-                <br></br>
+                <br />
+                <br />
                 <a href="https://nubank.com.br/pagar/48wth/mGWKfQeR5q">
                   <img
                     className="image-center"

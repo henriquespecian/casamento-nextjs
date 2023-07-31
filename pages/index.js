@@ -12,7 +12,7 @@ import {
   GlobalStyle,
 } from '@react95/core';
 import styled from 'styled-components';
-
+import { createGlobalStyle } from '@xstyled/styled-components';
 import {
   Drvspace7,
   Issue,
@@ -49,6 +49,13 @@ const InsideModal = styled(Frame)`
   overflow: auto;
   padding: 20px;
   box-shadow: none;
+`;
+
+const Wallpaper = createGlobalStyle`
+  body {
+    background: url(/image/wallpaper.jpg) no-repeat center center fixed;
+    background-size: cover;
+  }
 `;
 
 export default function Home() {

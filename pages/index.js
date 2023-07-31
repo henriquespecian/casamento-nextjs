@@ -240,7 +240,7 @@ export default function Home() {
                 <h2>Lista de Presentes</h2>
                 <br />
                 <br />
-                <p>Você pode fazer um pix direto pra gente</p>
+                <p>Se você não for criativo que nem a gente, aqui está o nosso PIX</p>
                 <br />
                 <br />
                 <a href="https://nubank.com.br/pagar/48wth/mGWKfQeR5q">
@@ -250,7 +250,7 @@ export default function Home() {
                     alt="QrCode do Pix"
                     href="https://nubank.com.br/pagar/48wth/mGWKfQeR5q"
                   />
-                  Pague aqui
+                  Clique aqui
                 </a>
               </div>
             </InsideModal>

@@ -53,7 +53,7 @@ const InsideModal = styled(Frame)`
 
 const Wallpaper = createGlobalStyle`
   body {
-    background: url(/image/wallpaper.jpg) no-repeat center center fixed;
+    background: url(/image/clouds.bmp) no-repeat center center fixed;
     background-size: cover;
   }
 `;
@@ -146,6 +146,7 @@ export default function Home() {
   return (
     <ThemeProvider>
       <GlobalStyle />
+      <Wallpaper />
       <div>
         <Head>
           <title>Henrique e Monica</title>

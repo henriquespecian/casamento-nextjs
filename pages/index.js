@@ -53,10 +53,10 @@ const InsideModal = styled(Frame)`
 
 const Wallpaper = createGlobalStyle`
   body {
-    background: url(/image/clouds.bmp) no-repeat center center fixed;
+    background: url( ${getImagePath("/image/clouds.bmp")}) no-repeat center center fixed;
     background-size: cover;
   }
-`;
+  `;
 
 export default function Home() {
   /* Spotify Modal */

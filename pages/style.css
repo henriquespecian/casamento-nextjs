@@ -51,13 +51,31 @@
   text-align: right;
 }
 
-input[type=text] {
-  margin:10px 10px;
+.modal-confirmacao {
+  margin: 1rem 1rem 1rem 1rem;
 }
+
 
 fieldset{
   margin:1rem 1rem 1rem 1rem;
-  height: 15vh;
+  height: 70vh;
   width: 65vw;
+  max-width: 500px;
   display: flex;
+}
+
+input[type=text] {
+  margin:10px 10px;
+  grid-column: 2 / 3;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-gap: 16px;
+  align-items: center;
+}
+
+label {
+  grid-column: 1 / 2;
 }

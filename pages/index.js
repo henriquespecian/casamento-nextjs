@@ -100,7 +100,7 @@ export default function Home() {
   }, []);
 
   const handleCloseConfirmacaoModal = useCallback(() => {
-    setShowConfirmacaoModal(false);
+    setShowConfirmacaoModal(false);    
   }, []);
 
   const inputArr = [
@@ -303,6 +303,7 @@ export default function Home() {
             title="Confirmação de Presença"
             icon={<FilePin variant="32x32_4" />}
             closeModal={handleCloseConfirmacaoModal}
+            className="modal-confirmacao"
             menu={[
               {
                 name: 'Options',
@@ -316,33 +317,35 @@ export default function Home() {
               },
             ]}
           >
-            <Fieldset legend="Nome dos presentes">
-              <div>
-                <label>Nome e sobrenome: </label>
+            <Fieldset legend="Confirmação de presença">
+              <form>               
+                <label >Nome e sobrenome: </label>
                 <Input
                   type="text"
                   placeholder="Nome e sobrenome"
+                  size={50}
+                  maxLength={60}
                   required
-                ></Input>
-                <Button onClick={addInput}>Adicionar acompanhante</Button>
-              </div>
-
-              {arr.map((item, i) => {
-                return (
-                  <div>
-                    <label>Nome e sobrenome: </label>
-                    <Input
-                      onChange={handleChange}
-                      value={item.value}
-                      id={i}
-                      type={item.type}
-                      size="40"
-                    />
-                  </div>
-                );
-              })}
+                />
+                <label >Nome e sobrenome: </label>
+                <Input
+                  type="text"
+                  placeholder="Nome e sobrenome"
+                  size={50}
+                  maxLength={60}
+                  required
+                />
+              <label >Nome e sobrenome: </label>
+                <Input
+                  type="text"
+                  placeholder="Nome e sobrenome"
+                  size={50}
+                  maxLength={60}
+                  required
+                />                    
+            </form>
+            
             </Fieldset>
-
             <div className="enviarCancelar">
               <Button className="botoes">Enviar</Button>
               <Button className="botoes">Cancelar</Button>

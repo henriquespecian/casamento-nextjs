@@ -386,7 +386,7 @@ export default function Home() {
             title="Readme.txt"
             icon={<Winpopup1 variant="32x32_4" />}
             closeModal={handleClosePadrinhosModal}
-            className="modal-confirmacao"
+            className="modal-padrinho"
             menu={[
               {
                 name: 'Options',
@@ -426,7 +426,7 @@ export default function Home() {
                   closeModal={handleCloseAlert}
                   height="120"
                   hasWindowButton={false}
-                  className="modal-padrinho"
+                  className="modal-baleia"
                   title="AEEEEEEEEEEEEEEEEEE"
                 >
                   <img
@@ -442,7 +442,7 @@ export default function Home() {
                   closeModal={handleCloseAlertNo}
                   height="120"
                   hasWindowButton={false}
-                  className="modal-padrinho"
+                  className="modal-baleia"
                   title="NOOOOOOOOOOOOOOOOOO"
                 >
                   <img

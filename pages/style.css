@@ -71,11 +71,22 @@ input[type=text] {
 
 form {
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 20vw 20vw;
   grid-gap: 16px;
   align-items: center;
 }
 
 label {
   grid-column: 1 / 2;
+}
+
+.baleia {
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+}
+
+.modal-padrinho {
+  margin: 1rem 1rem 1rem 1rem;
+  height: 250px !important;
 }

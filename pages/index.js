@@ -10,6 +10,11 @@ import {
   Button,
   ThemeProvider,
   GlobalStyle,
+  Alert,
+  Dialog,
+  IconWrapper,
+  RenderImage,
+  Message
 } from '@react95/core';
 import styled from 'styled-components';
 import { createGlobalStyle } from '@xstyled/styled-components';
@@ -20,6 +25,8 @@ import {
   Packager1,
   Mmsys112,
   Explorer108,
+  Winpopup1,
+  Winpopup3
 } from '@react95/icons';
 import { getImagePath } from '../utils/image';
 import { TASKBAR_HEIGHT } from '../utils/constants';
@@ -91,6 +98,26 @@ export default function Home() {
   const handleCloseCasamentoModal = useCallback(() => {
     setShowCasamentoModal(false);
   }, []);
+
+  /* Padrinhos */
+  const [showPadrinhosModal, setShowPadrinhosModal] = useState(false);
+
+  const handleOpenPadrinhosModal = useCallback(() => {
+    setShowPadrinhosModal(true);
+  }, []);
+
+  const handleClosePadrinhosModal = useCallback(() => {
+    setShowPadrinhosModal(false);    
+  }, []);
+
+  const [showAlertYes, toggleShowAlertYes] = useState(false);
+  const [showAlertNo, toggleShowAlertNo] = useState(false);
+
+  const handleOpenAlert = () => toggleShowAlertYes(true);
+  const handleCloseAlert = () => toggleShowAlertYes(false);
+
+  const handleOpenAlertNo = () => toggleShowAlertNo(true);
+  const handleCloseAlertNo = () => toggleShowAlertNo(false);
 
   /* Confirmação de casamento */
   const [showConfirmacaoModal, setShowConfirmacaoModal] = useState(false);
@@ -353,6 +380,82 @@ export default function Home() {
           </Modal>
         )}
 
+        {/* Padrinhos */}
+        {showPadrinhosModal && (
+          <Modal
+            title="Readme.txt"
+            icon={<Winpopup1 variant="32x32_4" />}
+            closeModal={handleClosePadrinhosModal}
+            className="modal-confirmacao"
+            menu={[
+              {
+                name: 'Options',
+                list: (
+                  <List>
+                    <List.Item onClick={handleClosePadrinhosModal}>
+                      Close
+                    </List.Item>
+                  </List>
+                ),
+              },
+            ]}
+          >
+            <InsideModal >
+              <p>
+              Sempre que nos encontramos é uma coisa nova que discutimos. Relacionamento, vida, casamento, dúvidas sobre se não sei o que eu sei ou se eu não sei o que eu não sei….. Enfim, foi com vocês que eu tirei todas as dúvidas sobre o pedido de casamento e dado tudo isso na hora de escolher os padirnhos não tinha como ser diferente.
+              </p>
+              <br />
+              <img
+                width={50}
+                height={50}
+                src={getImagePath('/image/heart.gif')}
+                className="heart"
+              />
+              <h1>E ai vocês topam?</h1>
+              <img
+                width={50}
+                height={50}
+                src={getImagePath('/image/heart.gif')}
+                className="heart"
+              />            
+            </InsideModal>
+            <div className="enviarCancelar">
+              <Button className="botoes" onClick={handleOpenAlert}>Sim</Button>
+              {showAlertYes && 
+                <Modal
+                  closeModal={handleCloseAlert}
+                  height="120"
+                  hasWindowButton={false}
+                  className="modal-padrinho"
+                  title="AEEEEEEEEEEEEEEEEEE"
+                >
+                  <img
+                    width={200}
+                    height={200}
+                    src={getImagePath('/image/baleia-sim.gif')}
+                    className="baleia" />
+                </Modal>
+              }
+              <Button className="botoes" onClick={handleOpenAlertNo}>Não</Button>
+              {showAlertNo && 
+                <Modal
+                  closeModal={handleCloseAlertNo}
+                  height="120"
+                  hasWindowButton={false}
+                  className="modal-padrinho"
+                  title="NOOOOOOOOOOOOOOOOOO"
+                >
+                  <img
+                    width={200}
+                    height={200}
+                    src={getImagePath('/image/baleia-nao.gif')}
+                    className="baleia" />
+                </Modal>
+              }
+            </div>
+          </Modal>
+        )}
+
         {/* Menu Iniciar  */}
         <TaskBar
           list={
@@ -377,6 +480,12 @@ export default function Home() {
                 onClick={handleOpenConfirmacaoModal}
               >
                 Confirmação de presença
+              </List.Item>
+              <List.Item
+                icon={<Winpopup1 variant="32x32_4" />}
+                onClick={handleOpenPadrinhosModal}
+              >
+                Marcela & GG
               </List.Item>
               <List.Divider />
               <List.Item

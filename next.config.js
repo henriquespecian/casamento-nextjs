@@ -15,3 +15,18 @@ const nextConfig = {
 };
 
 module.exports = withTM(withFonts(withImages(nextConfig)));
+
+module.exports = {
+  webpack5: true,
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+
+    return config;
+  },
+};
+
+module.exports = {
+  env: {
+    GOOGLE_SERVICE_PRIVATE_KEY: process.env.GOOGLE_SERVICE_PRIVATE_KEY,
+  },
+};

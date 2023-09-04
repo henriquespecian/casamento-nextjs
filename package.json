@@ -12,6 +12,7 @@
     "@react95/core": "6.0.4",
     "@react95/icons": "2.0.5",
     "@xstyled/styled-components": "^3.6.0",
+    "googleapis": "^126.0.1",
     "next": "12.3.1",
     "next-images": "^1.8.4",
     "next-transpile-modules": "^9.0.0",

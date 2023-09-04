@@ -31,7 +31,7 @@ import {
 import { getImagePath } from '../utils/image';
 import { TASKBAR_HEIGHT } from '../utils/constants';
 import { isMobileDevice } from '../utils/mobile';
-import { google } from "googleapis";
+
 
 const dataFormatada = function () {
   let _second = 1000;
@@ -160,10 +160,9 @@ export default function Home() {
   const SHEET_ID = process.env.NEXT_PUBLIC_SHEET_ID;
   const GOOGLE_CLIENT_EMAIL = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_EMAIL;
   const GOOGLE_SERVICE_PRIVATE_KEY =
-    process.env.NEXT_PUBLIC_GOOGLE_SERVICE_PRIVATE_KEY;
+    process.env.GOOGLE_SERVICE_PRIVATE_KEY;
 
-  // GoogleSpreadsheet Initialize
-  const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
+
 
   // Append Function
 const appendSpreadsheet = async (row) => {

@@ -99,6 +99,7 @@ export default function Home() {
   const handleCloseCasamentoModal = useCallback(() => {
     setShowCasamentoModal(false);
   }, []);
+  
 
   /* Padrinhos */
   const [showPadrinhosModal, setShowPadrinhosModal] = useState(false);
@@ -164,30 +165,18 @@ export default function Home() {
 
 
 
-  // Append Function
-const appendSpreadsheet = async (row) => {
-  try {
-    await doc.useServiceAccountAuth({
-      client_email: GOOGLE_CLIENT_EMAIL,
-      private_key: GOOGLE_SERVICE_PRIVATE_KEY.replace(/\\n/g, '\n'),
-    });
-    // loads document properties and worksheets
-    await doc.loadInfo();
-
-    const sheet = doc.sheetsById[SHEET_ID];
-    await sheet.addRow(row);
-  } catch (e) {
-    console.error('Error: ', e);
-  }
-};
-
-
-
 
   /* Github */
   const openGithub = function () {
     window.open('https://github.com/henriquespecian/casamento-nextjs');
   };
+
+  const share = async function () {
+    const url = "https://henriquespecian.github.io/casamento-nextjs/";
+    if (navigator.canShare && navigator.canShare({ url })) {
+      await navigator.share({ url });
+    }
+  }
 
   return (
     <ThemeProvider>
@@ -306,6 +295,21 @@ const appendSpreadsheet = async (row) => {
                   />
                   Clique aqui
                 </a>
+
+                {isMobile ? 
+                  <div>
+                    <br />
+                    <br />
+                    <h2>Compartilhe!</h2>
+                    <a onClick={share}>
+                      <img
+                        className="heart"
+                        src={getImagePath('/image/whatsapp_pixel.png')}
+                        alt="ZAP"
+                      />
+                    </a>
+                  </div>
+                 : null}               
               </div>
             </InsideModal>
           </Modal>

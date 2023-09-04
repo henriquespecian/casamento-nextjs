@@ -178,6 +178,18 @@ export default function Home() {
     }
   }
 
+  const can = function () {
+    const url = "https://henriquespecian.github.io/casamento-nextjs/";
+    return (navigator.canShare && navigator.canShare({ url }));
+  }
+
+  const [canShare, setcanShare] = useState();
+
+  useEffect(() => {
+    setcanShare(can());
+  }, [setcanShare]);
+
+
   return (
     <ThemeProvider>
       <GlobalStyle />
@@ -296,7 +308,7 @@ export default function Home() {
                   Clique aqui
                 </a>
 
-                {isMobile ? 
+                {canShare ? 
                   <div>
                     <br />
                     <br />

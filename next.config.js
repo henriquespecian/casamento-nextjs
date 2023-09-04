@@ -15,9 +15,3 @@ const nextConfig = {
 };
 
 module.exports = withTM(withFonts(withImages(nextConfig)));
-
-module.exports = {
-  env: {
-    GOOGLE_SERVICE_PRIVATE_KEY: process.env.GOOGLE_SERVICE_PRIVATE_KEY,
-  },
-};

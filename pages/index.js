@@ -31,25 +31,7 @@ import {
 import { getImagePath } from '../utils/image';
 import { TASKBAR_HEIGHT } from '../utils/constants';
 import { isMobileDevice } from '../utils/mobile';
-
-
-const dataFormatada = function () {
-  let _second = 1000;
-  let _minute = _second * 60;
-  let _hour = _minute * 60;
-  let _day = _hour * 24;
-
-  let distancia = Math.abs(new Date() - new Date(2024, 3, 13, 18));
-
-  var d = Math.floor(distancia / _day);
-  var h = Math.floor((distancia % _day) / _hour);
-  var m = Math.floor((distancia % _hour) / _minute);
-  var s = Math.floor((distancia % _minute) / _second);
-
-  return d + ' dias ' + h + ' horas ' + m + ' minutos ' + s + ' segundos';
-};
-
-const dataRegressiva = dataFormatada();
+import Timer from '../components/timer';
 
 const InsideModal = styled(Frame)`
   text-align: center;
@@ -261,23 +243,23 @@ export default function Home() {
                 <br />
                 <h2>Vamos nos casar!</h2>
                 <p>
-                  O grande dia está chegando e não poderíamos estar mais
-                  animados para compartilhar com a nossa família e amigos um dos
-                  dias mais especiais das nossas vidas!
+                Depois de 14 anos de amizade e 8 anos de namoro, chegou a hora de comemorarmos nosso casamento! 
                 </p>
                 <br />
                 <p>
-                  Queremos muito sua presença neste dia tão importante com muita
-                  festa, amor e carinho em uma comemoração que irá nos marcar
-                  para sempre!
+                Contamos com cada um dos convidados para celebrar essa história e marcar o início dessa nossa nova fase. A noite promete ser repleta de comida boa, bons drinks e KARAOKÊ!!!
+                </p>
+                <br />
+                <p>
+                Veja abaixo um pouco sobre nós, a nossa história, detalhes da festa e, o mais importante, a lista de presentes!
                 </p>
                 <br />
                 <br />
                 <h2>Faltam:</h2>
-
+                <Timer />
                 <br />
                 <br />
-                <h2>Endereco</h2>
+                <h2>Local</h2>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.153255731116!2d-46.6552800236925!3d-23.526989660332237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59a6f0437e37%3A0xf08fb1dfb1c91838!2sA%20Casa%20de%20Babette!5e0!3m2!1spt-BR!2sbr!4v1689711470236!5m2!1spt-BR!2sbr"
                   width={isMobile ? '210' : '400'}
@@ -495,7 +477,7 @@ export default function Home() {
                 Playlist do casamento
               </List.Item>
               <List.Item icon={<Packager1 variant="32x32_4" />}>
-                Lista de presentes
+                Sobre nós
               </List.Item>
               <List.Item
                 icon={<FilePin variant="32x32_4" />}
@@ -503,12 +485,12 @@ export default function Home() {
               >
                 Confirmação de presença
               </List.Item>
-              <List.Item
+              {/*<List.Item
                 icon={<Winpopup1 variant="32x32_4" />}
                 onClick={handleOpenPadrinhosModal}
               >
                 Marcela & GG
-              </List.Item>
+              </List.Item>*/}
               <List.Divider />
               <List.Item
                 icon={<Issue variant="32x32_4" />}

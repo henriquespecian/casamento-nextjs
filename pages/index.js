@@ -44,7 +44,7 @@ const InsideModal = styled(Frame)`
 
 const Wallpaper = createGlobalStyle`
   body {
-    background: url( ${getImagePath("/image/wallpaper_flower_mobile.jpeg")}) no-repeat center center fixed;
+    background: url( ${getImagePath("/image/wallpaper_flower_mobile.png")}) no-repeat center center fixed;
     background-size: cover;
   }
   `;

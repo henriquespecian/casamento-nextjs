@@ -190,7 +190,7 @@ export default function Home() {
       <Wallpaper />
       <div>
         <Head>
-          <title>Henrique e Monica</title>
+          <title>Henrique & Monica</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 

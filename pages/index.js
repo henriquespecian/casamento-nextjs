@@ -26,7 +26,8 @@ import {
   Mmsys112,
   Explorer108,
   Winpopup1,
-  Winpopup3
+  Winpopup3,
+  Wab321019
 } from '@react95/icons';
 import { getImagePath } from '../utils/image';
 import { TASKBAR_HEIGHT } from '../utils/constants';
@@ -43,7 +44,7 @@ const InsideModal = styled(Frame)`
 
 const Wallpaper = createGlobalStyle`
   body {
-    background: url( ${getImagePath("/image/clouds.bmp")}) no-repeat center center fixed;
+    background: url( ${getImagePath("/image/wallpaper_flower_mobile.jpeg")}) no-repeat center center fixed;
     background-size: cover;
   }
   `;
@@ -82,6 +83,17 @@ export default function Home() {
     setShowCasamentoModal(false);
   }, []);
   
+
+  /* Sobre nós */
+  const [showSobreNosModal, setShowSobreNosModal] = useState(false);
+
+  const handleOpenSobreNosModal = useCallback(() => {
+    setShowSobreNosModal(true);
+  }, []);
+
+  const handleCloseSobreNosModal = useCallback(() => {
+    setShowSobreNosModal(false);
+  }, []);
 
   /* Padrinhos */
   const [showPadrinhosModal, setShowPadrinhosModal] = useState(false);
@@ -173,8 +185,8 @@ export default function Home() {
 
 
   return (
-    <ThemeProvider>
-      <GlobalStyle />
+    <ThemeProvider theme={'millenium'}>
+      <GlobalStyle  />
       <Wallpaper />
       <div>
         <Head>
@@ -460,6 +472,57 @@ export default function Home() {
           </Modal>
         )}
 
+
+        {/* Sobre nós  */}
+        {showSobreNosModal && (
+          <Modal
+          className={!isMobile ? 'modal' : ''}
+          title="Sobre nós"
+          closeModal={handleCloseSobreNosModal}
+          icon={<Wab321019 variant="32x32_4" />}
+          style={{
+            ...(isMobile
+              ? {
+                  top: '3%',
+                  left: '5%',
+                  height: `calc(94% - ${TASKBAR_HEIGHT}px)`,
+                  width: '90%',
+                  margin: 0,
+                }
+              : {}),
+          }}
+          menu={[
+            {
+              name: 'Options',
+              list: (
+                <List>
+                  <List.Item onClick={handleCloseSobreNosModal}>
+                    Close
+                  </List.Item>
+                </List>
+              ),
+            },
+          ]}
+        >
+          <InsideModal bg="white" boxShadow="out">
+            <div>
+              <p>"Uma mulher linda, de largo sorriso e de um humor refinado, ótima e atenta ouvinte.</p>
+              <p>Se você procura por algum lugar novo onde comer, pode consultar seu imenso e vasto catálogo de lugares para visitar, sempre haverá um cantinho da cidade não explorado que ela cuidadosamente guardou para um momento em que um passeio se faz necessário.</p>
+              <p>Sua paixão por cachorro não se resume ao seu maior amor, a Sophia, vai muito além, sorrindo e apontando para cada animalzinho na rua. Adora dar nomes a cachorros de portão e criar personalidades inteiras baseadas no vazio olhar que eles tem, sem julgamentos, porque depois desses anos todos juntos esse é o meu maior passatempo também.</p>
+              <p>Uma mão mágica para a cozinha, parte pela sua intuição para combinar sabores e texturas e parte pelo seu lado de estar sempre aprendendo uma coisa nova nos mínimos detalhes, seja ela todos os passos de fazer um carbonara perfeito até como é extraído o açafrão das flores.</p>
+              <p>Enfim, a mulher que eu escolhei para passar o resto da vida junto."</p>
+              <p>Henrique</p>
+
+
+              <p>"É impossível encontrar uma pessoa que não goste do Henrique. Ele é a personificação de um labrador, simpático, extrovertido e tranquilo. No rolê, ele é a central de assuntos, sempre ouviu a última fofoca (porém só lembra a metade), ouviu um podcast recentemente, viu um documentário sobre, sempre chega dizendo: “já imaginou se acontece tal coisa?”</p>
+              <p>Sempre disponível pra dar uma voltinha, o Henrique gosta de conhecer cafés especiais, de comer pratos preparados em grandes restaurantes, da mesma maneira que entra em qualquer buteco pra comer um baião de dois e tomar cerveja.</p>
+              <p>O jeito lógico de programador não tirou o lado cuidadoso com as pessoas e a dedicação que o Henrique tem com aqueles que são importantes na sua vida. É com os amigos e com a família que ele prefere passar a maior parte do tempo, principalmente se tiver um jogo do São Paulo para assistir e o lugar for pet friendly, pra poder ficar com a sua melhor amiga Sophia"</p>
+              <p>Monica</p>
+            </div>
+          </InsideModal>
+        </Modal>
+        )}
+
         {/* Menu Iniciar  */}
         <TaskBar
           list={
@@ -476,7 +539,10 @@ export default function Home() {
               >
                 Playlist do casamento
               </List.Item>
-              <List.Item icon={<Packager1 variant="32x32_4" />}>
+              <List.Item 
+                icon={<Wab321019 variant="32x32_4" />}
+                onClick={handleOpenSobreNosModal}
+              >
                 Sobre nós
               </List.Item>
               <List.Item

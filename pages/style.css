@@ -17,6 +17,13 @@
   }
 }
 
+.about-us {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
 .modal {
   margin: 1rem 1rem 1rem 1rem;
   height: 80vh !important;

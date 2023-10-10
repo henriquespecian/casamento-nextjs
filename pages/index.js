@@ -62,7 +62,8 @@ export default function Home() {
   }, [setIsMobile]);
 
   useEffect(() => {
-    ref.current.parentElement.style.overflow = 'auto';
+    if(ref.current != null)
+      ref.current.parentElement.style.overflow = 'auto';
   }, [ref.current]);
 
   const handleOpenSpotifyModal = useCallback(() => {

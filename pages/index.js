@@ -5,28 +5,17 @@ import {
   List,
   Frame,
   TaskBar,
-  Fieldset,
-  Input,
   Button,
   ThemeProvider,
   GlobalStyle,
-  Alert,
-  Dialog,
-  IconWrapper,
-  RenderImage,
-  Message
 } from '@react95/core';
 import styled from 'styled-components';
 import { createGlobalStyle } from '@xstyled/styled-components';
 import {
   Drvspace7,
   Issue,
-  FilePin,
-  Packager1,
   Mmsys112,
-  Explorer108,
   Winpopup1,
-  Winpopup3,
   Wab321019
 } from '@react95/icons';
 import { getImagePath } from '../utils/image';
@@ -56,6 +45,7 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState();
 
   const ref = useRef(null);
+  const overflowRef = useRef(null);
 
   useEffect(() => {
     setIsMobile(isMobileDevice());
@@ -65,6 +55,11 @@ export default function Home() {
     if(ref.current != null)
       ref.current.parentElement.style.overflow = 'auto';
   }, [ref.current]);
+
+  useEffect(() => {
+    if(overflowRef.current != null)
+      overflowRef.current.parentElement.style.overflow = 'auto';
+  }, [overflowRef.current]);
 
   const handleOpenSpotifyModal = useCallback(() => {
     setShowSpotifyModal(true);
@@ -126,40 +121,6 @@ export default function Home() {
   const handleCloseConfirmacaoModal = useCallback(() => {
     setShowConfirmacaoModal(false);    
   }, []);
-  
-  const [form, setForm] = useState({
-    name: ''
-  });
-
-  const submitForm = (e) => {
-    e.preventDefault();
-
-    if (
-      form.name !== ''
-    ) {
-      const newRow = {
-        NomeCompleto: form.name
-      };
-  
-      appendSpreadsheet(newRow);
-    }
-  };
-
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const SPREADSHEET_ID = process.env.NEXT_PUBLIC_SPREADSHEET_ID;
-  const SHEET_ID = process.env.NEXT_PUBLIC_SHEET_ID;
-  const GOOGLE_CLIENT_EMAIL = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_EMAIL;
-  const GOOGLE_SERVICE_PRIVATE_KEY =
-    process.env.GOOGLE_SERVICE_PRIVATE_KEY;
-
-
-
 
   /* Github */
   const openGithub = function () {
@@ -354,49 +315,6 @@ export default function Home() {
           </Modal>
         )}
 
-        {/* Confirmação de presença  */}
-        {showConfirmacaoModal && (
-          <Modal
-            title="Confirmação de Presença"
-            icon={<FilePin variant="32x32_4" />}
-            closeModal={handleCloseConfirmacaoModal}
-            className="modal-confirmacao"
-            menu={[
-              {
-                name: 'Options',
-                list: (
-                  <List>
-                    <List.Item onClick={handleCloseConfirmacaoModal}>
-                      Close
-                    </List.Item>
-                  </List>
-                ),
-              },
-            ]}
-          >
-            <Fieldset legend="Confirmação de presença">
-              <form onSubmit={submitForm}>               
-                <label >Nome e sobrenome: </label>
-                <Input
-                  type="text"
-                  placeholder="Nome e sobrenome"
-                  size={50}
-                  maxLength={60}
-                  required
-                  name='name'
-                  onChange={handleChange}
-                />
-                <Button type='submit'>Submit Form</Button>             
-            </form>
-            
-            </Fieldset>
-            <div className="enviarCancelar">
-              <Button className="botoes">Enviar</Button>
-              <Button className="botoes">Cancelar</Button>
-            </div>
-          </Modal>
-        )}
-
         {/* Padrinhos */}
         {showPadrinhosModal && (
           <Modal
@@ -505,7 +423,7 @@ export default function Home() {
             },
           ]}
         >
-          <InsideModal bg="white" boxShadow="out" ref={ref}>
+          <InsideModal bg="white" boxShadow="out" ref={overflowRef}>
             <div>
 
             <h1 className="titulo">Sobre Nós</h1>
@@ -563,12 +481,6 @@ export default function Home() {
                 onClick={handleOpenSobreNosModal}
               >
                 Sobre nós
-              </List.Item>
-              <List.Item
-                icon={<FilePin variant="32x32_4" />}
-                onClick={handleOpenConfirmacaoModal}
-              >
-                Confirmação de presença
               </List.Item>
               {/*<List.Item
                 icon={<Winpopup1 variant="32x32_4" />}

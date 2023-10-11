@@ -104,7 +104,7 @@ label {
 }
 
 p {
-  font-size: 13px
+  font-size: 15px;
 }
 
 h2 {
@@ -113,4 +113,24 @@ h2 {
 
 h1 {
   font-size: 29px;
+}
+
+
+div.flip-clock {
+  --fcc-flip-duration: 5s; /* transition duration when flip card */
+  --fcc-digit-block-width: 40px; /* width of digit card */
+  --fcc-digit-block-height: 60px; /* height of digit card, highly recommend in even number */
+  --fcc-digit-font-size: 40px; /* font size of digit */
+  --fcc-digit-color: white; /* color of digit */
+  --fcc-label-font-size: 16px;/* font size of label */
+  --fcc-label-color: black; /* color of label */
+  --fcc-background: #8FB0A9; /* background of digit card */  
+  --fcc-divider-color: hsla(0,0%,100%,0.4); /* color of divider */
+  --fcc-divider-height: 1px; /* height of divider */
+}
+
+@media only screen and (min-width: 960px) {
+  .div.flip-clock {
+    width: 50%;
+  }
 }

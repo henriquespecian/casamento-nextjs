@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@leenguyen/react-flip-clock-countdown": "^1.4.1",
     "@react95/core": "6.0.4",
     "@react95/icons": "2.0.5",
     "@xstyled/styled-components": "^3.6.0",

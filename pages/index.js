@@ -21,7 +21,9 @@ import {
 import { getImagePath } from '../utils/image';
 import { TASKBAR_HEIGHT } from '../utils/constants';
 import { isMobileDevice } from '../utils/mobile';
-import Timer from '../components/timer';
+import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown';
+import '@leenguyen/react-flip-clock-countdown/dist/index.css';
+
 
 const InsideModal = styled(Frame)`
   text-align: center;
@@ -43,6 +45,12 @@ export default function Home() {
   const [showSpotifyModal, setShowSpotifyModal] = useState(false);
 
   const [isMobile, setIsMobile] = useState();
+
+  const [isClient, setIsClient] = useState(false)
+ 
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   const ref = useRef(null);
   const overflowRef = useRef(null);
@@ -230,7 +238,15 @@ export default function Home() {
                 <br />
                 <br />
                 <h2>Faltam:</h2>
-                <Timer />
+                {/* Do not prerender to avoid hydration error */}
+                <div className='image-center'>
+                {isClient && (<FlipClockCountdown 
+                    to={'2024-03-13T19:00:00.635Z'}             
+                    labels={['DIAS', 'HORAS', 'MINUTOS', 'SEGUNDOS']}
+                    className="flip-clock"
+                />)}  
+                </div>
+              
                 <br />
                 <br />
                 <h2>Local</h2>
@@ -251,6 +267,13 @@ export default function Home() {
                 <h2>Lista de Presentes</h2>
                 <br />
                 <br />
+                <p>
+                  <a href='https://noivos.casar.com/monirique#/presentes'>
+                    Lista de presentes num site feio
+                  </a>
+                </p>
+                <br />
+                <br />
                 <p>Se você não for criativo que nem a gente, aqui está o nosso PIX</p>
                 <br />
                 <br />
@@ -263,6 +286,7 @@ export default function Home() {
                   />
                   Clique aqui
                 </a>
+                <p>Chave-pix: 97241cba-c833-4fae-bab8-dc2860245083</p>
 
                 {canShare ? 
                   <div>

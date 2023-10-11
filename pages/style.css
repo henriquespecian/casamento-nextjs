@@ -102,3 +102,15 @@ label {
   margin: 1rem 1rem 1rem 1rem;
   max-width: 1000px;
 }
+
+p {
+  font-size: 13px
+}
+
+h2 {
+  font-size: 25px;
+}
+
+h1 {
+  font-size: 29px;
+}

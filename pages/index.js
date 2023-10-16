@@ -268,8 +268,17 @@ export default function Home() {
                 <br />
                 <br />
                 <p>
+
+
+                
+
                   <a href='https://noivos.casar.com/monirique#/presentes'>
-                    Lista de presentes num site feio
+                  <img
+                    className="icons"
+                    src={getImagePath('/image/gift.png')}
+                    alt="Lista de presente"
+                  />
+                    Lista de presentes num site feio que não fui eu que fiz
                   </a>
                 </p>
                 <br />

@@ -133,12 +133,14 @@ div.flip-clock {
   margin: auto;
 }
 
-@media only screen and (max-width: 500px) {
-  .div.flip-clock {
+@media only screen and (max-width: 555px) {
+  div.flip-clock {
     --fcc-digit-block-width: 23px;
-    --fcc-digit-block-height: 49px;
+    --fcc-digit-block-height: 46px;
     --fcc-digit-font-size: 33px;
-    --fcc-label-font-size: 12px;
+    --fcc-label-font-size: 11px;
+    --fcc-separator-size: 0px;
+    --fcc-divider-height: 1px;
   }
 }
 

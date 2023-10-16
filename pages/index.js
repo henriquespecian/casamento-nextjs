@@ -58,17 +58,7 @@ export default function Home() {
   useEffect(() => {
     setIsMobile(isMobileDevice());
   }, [setIsMobile]);
-
-  useEffect(() => {
-    if(ref.current != null)
-      ref.current.parentElement.style.overflow = 'auto';
-  }, [ref.current]);
-
-  useEffect(() => {
-    if(overflowRef.current != null)
-      overflowRef.current.parentElement.style.overflow = 'auto';
-  }, [overflowRef.current]);
-
+ 
   const handleOpenSpotifyModal = useCallback(() => {
     setShowSpotifyModal(true);
   }, []);
@@ -78,6 +68,12 @@ export default function Home() {
 
   /* Casamento */
   const [showCasamentoModal, setShowCasamentoModal] = useState(true);
+
+  useEffect(() => {
+    if(ref.current != null)
+      ref.current.parentElement.style.overflow = 'auto';
+  }, [ref.current, showCasamentoModal]);
+
 
   const handleOpenCasamentoModal = useCallback(() => {
     setShowCasamentoModal(true);
@@ -90,6 +86,11 @@ export default function Home() {
 
   /* Sobre nós */
   const [showSobreNosModal, setShowSobreNosModal] = useState(false);
+
+  useEffect(() => {
+    if(overflowRef.current != null)
+      overflowRef.current.parentElement.style.overflow = 'auto';
+  }, [overflowRef.current, showSobreNosModal]);
 
   const handleOpenSobreNosModal = useCallback(() => {
     setShowSobreNosModal(true);
@@ -232,6 +233,11 @@ export default function Home() {
                 Contamos com cada um dos convidados para celebrar essa história e marcar o início dessa nossa nova fase. A noite promete ser repleta de comida boa, bons drinks e KARAOKÊ!!!
                 </p>
                 <br />
+                <img
+                  className="icons"
+                  src={getImagePath('/image/megaphone.png')}
+                  alt="Prestenção"
+                /> 
                 <p>
                 Veja abaixo um pouco sobre nós, a nossa história, detalhes da festa e, o mais importante, a lista de presentes!
                 </p>
@@ -239,14 +245,11 @@ export default function Home() {
                 <br />
                 <h2>Faltam:</h2>
                 {/* Do not prerender to avoid hydration error */}
-                <div className='image-center'>
                 {isClient && (<FlipClockCountdown 
                     to={'2024-03-13T19:00:00.635Z'}             
                     labels={['DIAS', 'HORAS', 'MINUTOS', 'SEGUNDOS']}
                     className="flip-clock"
-                />)}  
-                </div>
-              
+                />)}              
                 <br />
                 <br />
                 <h2>Local</h2>

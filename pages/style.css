@@ -129,18 +129,16 @@ div.flip-clock {
   --fcc-background: #8FB0A9; /* background of digit card */  
   --fcc-divider-color: hsla(0,0%,100%,0.4); /* color of divider */
   --fcc-divider-height: 1px; /* height of divider */
+  width: fit-content;
+  margin: auto;
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (max-width: 500px) {
   .div.flip-clock {
-    width: 50%;
-  }
-}
-
-
-@media only screen and (min-width: 960px) {
-  .div.flip-clock {
-    width: 15%;
+    --fcc-digit-block-width: 23px;
+    --fcc-digit-block-height: 49px;
+    --fcc-digit-font-size: 33px;
+    --fcc-label-font-size: 12px;
   }
 }
 

@@ -16,7 +16,8 @@ import {
   Issue,
   Mmsys112,
   Winpopup1,
-  Wab321019
+  Wab321019,
+  Sndrec3210
 } from '@react95/icons';
 import { getImagePath } from '../utils/image';
 import { TASKBAR_HEIGHT } from '../utils/constants';
@@ -98,6 +99,23 @@ export default function Home() {
 
   const handleCloseSobreNosModal = useCallback(() => {
     setShowSobreNosModal(false);
+  }, []);
+
+
+  /* Mais informações */
+  const [showInformacoesModal, setShowInformacoesModal] = useState(false);
+
+  useEffect(() => {
+    if(overflowRef.current != null)
+      overflowRef.current.parentElement.style.overflow = 'auto';
+  }, [overflowRef.current, showInformacoesModal]);
+
+  const handleOpenInformacoesModal = useCallback(() => {
+    setShowInformacoesModal(true);
+  }, []);
+
+  const handleCloseInformacoesModal = useCallback(() => {
+    setShowInformacoesModal(false);
   }, []);
 
   /* Padrinhos */
@@ -252,7 +270,8 @@ export default function Home() {
                 />)}              
                 <br />
                 <br />
-                <h2>Local</h2>
+                <h2>Local e Horário</h2>
+                <p>Colocar aqui uma informação sobre horário, talvez bem destacado</p>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.153255731116!2d-46.6552800236925!3d-23.526989660332237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59a6f0437e37%3A0xf08fb1dfb1c91838!2sA%20Casa%20de%20Babette!5e0!3m2!1spt-BR!2sbr!4v1689711470236!5m2!1spt-BR!2sbr"
                   width={isMobile ? '210' : '400'}
@@ -268,13 +287,11 @@ export default function Home() {
                 <br />
                 <br />
                 <h2>Lista de Presentes</h2>
+                <p>Temos duas formas de enviar presente, uma é a lista de presente que é só clicar no ícone abaixo para ter acesso e a outra é enviar um PIX com uma mensagem bem legal pra gente</p>
+                <p>Mas também aceitamos presentes ao vivo, como os antigos faziam</p>
                 <br />
                 <br />
                 <p>
-
-
-                
-
                   <a href='https://noivos.casar.com/monirique#/presentes'>
                   <img
                     className="icons"
@@ -284,9 +301,6 @@ export default function Home() {
                     Lista de presentes num site feio que não fui eu que fiz
                   </a>
                 </p>
-                <br />
-                <br />
-                <p>Se você não for criativo que nem a gente, aqui está o nosso PIX</p>
                 <br />
                 <br />
                 <a href="https://nubank.com.br/pagar/48wth/mGWKfQeR5q">
@@ -427,7 +441,6 @@ export default function Home() {
           </Modal>
         )}
 
-
         {/* Sobre nós  */}
         {showSobreNosModal && (
           <Modal
@@ -462,9 +475,12 @@ export default function Home() {
           <InsideModal bg="white" boxShadow="out" ref={overflowRef}>
             <div>
 
-            <h1 className="titulo">Sobre Nós</h1>
-
-            <br />
+              <h1 className="titulo">Sobre Nós</h1>
+              <br />
+              <br />
+              <p>"Quem um dia irá dizer que não existe razão pras coisas feitas pelo coração?"</p>
+              <p>Nosso amor começou de repente, sem que a gente percebesse ele já estava ali. A nossa amizade se tornou tão grande que decidimos passar o resto da vida juntos!</p>
+              <br />
               <br />
               <br />
               <img
@@ -474,7 +490,7 @@ export default function Home() {
               />
               <h2 className="titulo">Monica por Henrique</h2>
               <p>"Uma mulher linda, de largo sorriso e de um humor refinado, ótima e atenta ouvinte.</p>
-              <p>Se você procura por algum lugar novo onde comer, pode consultar seu imenso e vasto catálogo de lugares para visitar, sempre haverá um cantinho da cidade não explorado que ela cuidadosamente guardou para um momento em que um passeio se faz necessário.</p>
+              <p>Se você procura por algum lugar novo onde comer, pode consultar seu imenso e vasto <a href='https://maps.app.goo.gl/4yBS6wbEfL3uR3AV9'>catálogo de lugares para visitar</a>, sempre haverá um cantinho da cidade não explorado que ela cuidadosamente guardou para um momento em que um passeio se faz necessário.</p>
               <p>Sua paixão por cachorro não se resume ao seu maior amor, a Sophia, vai muito além, sorrindo e apontando para cada animalzinho na rua. Adora dar nomes a cachorros de portão e criar personalidades inteiras baseadas no vazio olhar que eles tem, sem julgamentos, porque depois desses anos todos juntos esse é o meu maior passatempo também.</p>
               <p>Uma mão mágica para a cozinha, parte pela sua intuição para combinar sabores e texturas e parte pelo seu lado de estar sempre aprendendo uma coisa nova nos mínimos detalhes, seja ela todos os passos de fazer um carbonara perfeito até como é extraído o açafrão das flores.</p>
               <p>Enfim, a mulher que eu escolhei para passar o resto da vida junto."</p>
@@ -491,6 +507,51 @@ export default function Home() {
               <p>"É impossível encontrar uma pessoa que não goste do Henrique. Ele é a personificação de um labrador, simpático, extrovertido e tranquilo. No rolê, ele é a central de assuntos, sempre ouviu a última fofoca (porém só lembra a metade), ouviu um podcast recentemente, viu um documentário sobre, sempre chega dizendo: “já imaginou se acontece tal coisa?”</p>
               <p>Sempre disponível pra dar uma voltinha, o Henrique gosta de conhecer cafés especiais, de comer pratos preparados em grandes restaurantes, da mesma maneira que entra em qualquer buteco pra comer um baião de dois e tomar cerveja.</p>
               <p>O jeito lógico de programador não tirou o lado cuidadoso com as pessoas e a dedicação que o Henrique tem com aqueles que são importantes na sua vida. É com os amigos e com a família que ele prefere passar a maior parte do tempo, principalmente se tiver um jogo do São Paulo para assistir e o lugar for pet friendly, pra poder ficar com a sua melhor amiga Sophia"</p>
+            </div>
+          </InsideModal>
+        </Modal>
+        )}
+
+        {/* Mais informações */}
+        {showInformacoesModal && (
+          <Modal
+          className={!isMobile ? 'modal' : ''}
+          title="Informações"
+          closeModal={handleCloseInformacoesModal}
+          icon={<Sndrec3210 variant="32x32_4" />}
+          style={{
+            ...(isMobile
+              ? {
+                  top: '3%',
+                  left: '5%',
+                  height: `calc(94% - ${TASKBAR_HEIGHT}px)`,
+                  width: '90%',
+                  margin: 0,
+                }
+              : {}),
+          }}
+          menu={[
+            {
+              name: 'Options',
+              list: (
+                <List>
+                  <List.Item onClick={handleCloseInformacoesModal}>
+                    Close
+                  </List.Item>
+                </List>
+              ),
+            },
+          ]}
+        >
+          <InsideModal bg="white" boxShadow="out" ref={overflowRef}>
+            <div>
+
+              <h1 className="titulo">Informação</h1>
+
+              <p>Queremos que todos estejam BEM BONITOS mas também confortáveis pra arrasar na cantoria do karaokê. Recomendamos para os homens terno e camisa social, e para as mulheres vestidos longos ou midi, macacões, ternos. Se quiser complementar o look com um tênis casual que você goste muito, fique à vontade!</p>
+              <br />
+              <p>Caso queira se hospedar bem pertinho do casamento, estas são algumas opções:</p>
+              <a href='https://maps.app.goo.gl/xzVNepR6cXJvxZwr5'>https://maps.app.goo.gl/xzVNepR6cXJvxZwr5</a>
             </div>
           </InsideModal>
         </Modal>
@@ -517,6 +578,12 @@ export default function Home() {
                 onClick={handleOpenSobreNosModal}
               >
                 Sobre nós
+              </List.Item>
+              <List.Item 
+                icon={<Sndrec3210 variant="32x32_4" />}
+                onClick={handleOpenInformacoesModal}
+              >
+                Mais informações
               </List.Item>
               {/*<List.Item
                 icon={<Winpopup1 variant="32x32_4" />}

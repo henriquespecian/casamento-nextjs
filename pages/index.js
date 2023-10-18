@@ -181,6 +181,7 @@ export default function Home() {
         <Head>
           <title>Henrique & Monica</title>
           <link rel="icon" href="/favicon.ico" />
+          <meta name="theme-color" content="#8FB0A9"></meta>
         </Head>
 
         {/* Modal do Casamento */}
@@ -233,11 +234,11 @@ export default function Home() {
                   />
                 </div>
                 <br />
-                <h2>São Paulo. 13 Abril 2024</h2>
+                <h2>São Paulo. 13 Abril 2024 - 19h</h2>
                 <br />
                 <br />
                 <img
-                  className="image-center couple"
+                  className="image-center"
                   src={getImagePath('/image/Monica_HenriquepxArt.png')}
                   alt="Monica & Henrique & Sophia"
                 />
@@ -550,6 +551,29 @@ export default function Home() {
 
               <p>Queremos que todos estejam BEM BONITOS mas também confortáveis pra arrasar na cantoria do karaokê. Recomendamos para os homens terno e camisa social, e para as mulheres vestidos longos ou midi, macacões, ternos. Se quiser complementar o look com um tênis casual que você goste muito, fique à vontade!</p>
               <br />
+
+              <div className='polaroid'>
+                <img
+                  className="dress-code"
+                  src={getImagePath('/image/dress-code-man.png')}
+                  alt="Dress code homem"
+                />
+                <div className='container'>
+                  <p>venha cheroso</p>
+                </div>
+              </div>
+              <div className='polaroid'>
+                <img
+                  className="dress-code"
+                  src={getImagePath('/image/dress-code-woman.png')}
+                  alt="Dress code mulher"
+                />
+                <div className='container'>
+                  <p>é uma sugestão hein</p>
+                </div>
+              </div>
+
+              <h1 className="titulo">Hospedagem</h1>
               <p>Caso queira se hospedar bem pertinho do casamento, estas são algumas opções:</p>
               <a href='https://maps.app.goo.gl/xzVNepR6cXJvxZwr5'>https://maps.app.goo.gl/xzVNepR6cXJvxZwr5</a>
             </div>

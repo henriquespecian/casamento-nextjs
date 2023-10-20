@@ -11,7 +11,7 @@ const nextConfig = {
   images: {
     disableStaticImages: true,
   },
-  basePath: isProd ? '' : undefined,
+  basePath: isProd ? '/casamento-nextjs' : undefined,
 };
 
 module.exports = withTM(withFonts(withImages(nextConfig)));

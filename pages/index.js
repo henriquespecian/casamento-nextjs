@@ -17,7 +17,7 @@ import {
   Mmsys112,
   Winpopup1,
   Wab321019,
-  Sndrec3210
+  User5
 } from '@react95/icons';
 import { getImagePath } from '../utils/image';
 import { TASKBAR_HEIGHT } from '../utils/constants';
@@ -234,7 +234,7 @@ export default function Home() {
                   />
                 </div>
                 <br />
-                <h2>São Paulo. 13 Abril 2024 - 19h</h2>
+                <h2>São Paulo. 13 Abril 2024 - 17h40</h2>
                 <br />
                 <br />
                 <img
@@ -251,12 +251,6 @@ export default function Home() {
                 <p>
                 Contamos com cada um dos convidados para celebrar essa história e marcar o início dessa nossa nova fase. A noite promete ser repleta de comida boa, bons drinks e KARAOKÊ!!!
                 </p>
-                <br />
-                <img
-                  className="icons"
-                  src={getImagePath('/image/megaphone.png')}
-                  alt="Prestenção"
-                /> 
                 <p>
                 Veja abaixo um pouco sobre nós, a nossa história, detalhes da festa e, o mais importante, a lista de presentes!
                 </p>
@@ -265,14 +259,14 @@ export default function Home() {
                 <h2>Faltam:</h2>
                 {/* Do not prerender to avoid hydration error */}
                 {isClient && (<FlipClockCountdown 
-                    to={'2024-03-13T19:00:00.635Z'}             
+                    to={'2024-03-13T18:00:00.635Z'}             
                     labels={['DIAS', 'HORAS', 'MINUTOS', 'SEGUNDOS']}
                     className="flip-clock"
                 />)}              
                 <br />
                 <br />
                 <h2>Local e Horário</h2>
-                <p>Colocar aqui uma informação sobre horário, talvez bem destacado</p>
+                <p>Horário de chegada - 17h40</p>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.153255731116!2d-46.6552800236925!3d-23.526989660332237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59a6f0437e37%3A0xf08fb1dfb1c91838!2sA%20Casa%20de%20Babette!5e0!3m2!1spt-BR!2sbr!4v1689711470236!5m2!1spt-BR!2sbr"
                   width={isMobile ? '210' : '400'}
@@ -289,7 +283,6 @@ export default function Home() {
                 <br />
                 <h2>Lista de Presentes</h2>
                 <p>Temos duas formas de enviar presente, uma é a lista de presente que é só clicar no ícone abaixo para ter acesso e a outra é enviar um PIX com uma mensagem bem legal pra gente</p>
-                <p>Mas também aceitamos presentes ao vivo, como os antigos faziam</p>
                 <br />
                 <br />
                 <p>
@@ -299,7 +292,7 @@ export default function Home() {
                     src={getImagePath('/image/gift.png')}
                     alt="Lista de presente"
                   />
-                    Lista de presentes num site feio que não fui eu que fiz
+                    Lista de presentes do casar.com
                   </a>
                 </p>
                 <br />
@@ -313,8 +306,16 @@ export default function Home() {
                   />
                   Clique aqui
                 </a>
-                <p>Chave-pix: 97241cba-c833-4fae-bab8-dc2860245083</p>
-
+                <p>Chave-pix: 97241cba-c833-4fae-bab8-dc2860245083</p>            
+                <br />
+                <h2>Traje + Hospedagem</h2>
+                <br />
+                <img
+                  className="icons"
+                  src={getImagePath('/image/megaphone.png')}
+                  alt="Prestenção"
+                  onClick={handleOpenInformacoesModal}
+                />
                 {canShare ? 
                   <div>
                     <br />
@@ -517,9 +518,9 @@ export default function Home() {
         {showInformacoesModal && (
           <Modal
           className={!isMobile ? 'modal' : ''}
-          title="Informações"
+          title="Traje + Hospedagem"
           closeModal={handleCloseInformacoesModal}
-          icon={<Sndrec3210 variant="32x32_4" />}
+          icon={<User5 variant="32x32_4" />}
           style={{
             ...(isMobile
               ? {
@@ -546,12 +547,10 @@ export default function Home() {
         >
           <InsideModal bg="white" boxShadow="out" ref={overflowRef}>
             <div>
-
-              <h1 className="titulo">Informação</h1>
-
+              <h1 className="titulo">Traje + Hospedagem</h1>
               <p>Queremos que todos estejam BEM BONITOS mas também confortáveis pra arrasar na cantoria do karaokê. Recomendamos para os homens terno e camisa social, e para as mulheres vestidos longos ou midi, macacões, ternos. Se quiser complementar o look com um tênis casual que você goste muito, fique à vontade!</p>
+              <p>Abaixo colocamos algumas inspirações</p>
               <br />
-
               <div className='polaroid'>
                 <img
                   className="dress-code"
@@ -559,7 +558,7 @@ export default function Home() {
                   alt="Dress code homem"
                 />
                 <div className='container'>
-                  <p>venha cheroso</p>
+                  
                 </div>
               </div>
               <div className='polaroid'>
@@ -569,13 +568,34 @@ export default function Home() {
                   alt="Dress code mulher"
                 />
                 <div className='container'>
-                  <p>é uma sugestão hein</p>
+                  
                 </div>
               </div>
 
               <h1 className="titulo">Hospedagem</h1>
               <p>Caso queira se hospedar bem pertinho do casamento, estas são algumas opções:</p>
-              <a href='https://maps.app.goo.gl/xzVNepR6cXJvxZwr5'>https://maps.app.goo.gl/xzVNepR6cXJvxZwr5</a>
+              <br />
+              <h2 className="titulo">Hotel Recanto das Perdizes</h2>
+              <br />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14631.97851478471!2d-46.6623388!3d-23.5326956!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce581a41a1bb1b%3A0xf05c0f691a9b6f7!2sHotel%20Recanto%20das%20Perdizes!5e0!3m2!1spt-BR!2sbr!4v1697812187519!5m2!1spt-BR!2sbr"
+                width={isMobile ? '210' : '400'}
+                height="300"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <br />
+              <h2 className="titulo">The Standard Residence Higienópolis</h2>
+              <br />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14631.666419471805!2d-46.6646499!3d-23.5355017!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59b6a8a83a6f%3A0x5b4da370f5e40c89!2sThe%20Standard%20Residence%20Higien%C3%B3polis!5e0!3m2!1spt-BR!2sbr!4v1697812239172!5m2!1spt-BR!2sbR"
+                width={isMobile ? '210' : '400'}
+                height="300"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </InsideModal>
         </Modal>
@@ -604,10 +624,10 @@ export default function Home() {
                 Sobre nós
               </List.Item>
               <List.Item 
-                icon={<Sndrec3210 variant="32x32_4" />}
+                icon={<User5 variant="32x32_4" />}
                 onClick={handleOpenInformacoesModal}
               >
-                Mais informações
+                Traje + Hospedagem
               </List.Item>
               {/*<List.Item
                 icon={<Winpopup1 variant="32x32_4" />}

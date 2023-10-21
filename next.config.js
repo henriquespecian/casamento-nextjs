@@ -9,9 +9,8 @@ const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
   images: {
-    disableStaticImages: true,
-  },
-  basePath: isProd ? '/casamento-nextjs' : undefined,
+    disableStaticImages: true
+  }
 };
 
 module.exports = withTM(withFonts(withImages(nextConfig)));

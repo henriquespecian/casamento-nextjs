@@ -495,7 +495,7 @@ export default function Home() {
               <p>Se você procura por algum lugar novo onde comer, pode consultar seu imenso e vasto <a href='https://maps.app.goo.gl/4yBS6wbEfL3uR3AV9'>catálogo de lugares para visitar</a>, sempre haverá um cantinho da cidade não explorado que ela cuidadosamente guardou para um momento em que um passeio se faz necessário.</p>
               <p>Sua paixão por cachorro não se resume ao seu maior amor, a Sophia, vai muito além, sorrindo e apontando para cada animalzinho na rua. Adora dar nomes a cachorros de portão e criar personalidades inteiras baseadas no vazio olhar que eles tem, sem julgamentos, porque depois desses anos todos juntos esse é o meu maior passatempo também.</p>
               <p>Uma mão mágica para a cozinha, parte pela sua intuição para combinar sabores e texturas e parte pelo seu lado de estar sempre aprendendo uma coisa nova nos mínimos detalhes, seja ela todos os passos de fazer um carbonara perfeito até como é extraído o açafrão das flores.</p>
-              <p>Enfim, a mulher que eu escolhei para passar o resto da vida junto."</p>
+              <p>Enfim, a mulher que eu escolhi para passar o resto da vida junto."</p>
               <br />
               <br />
               <br />

@@ -259,7 +259,7 @@ export default function Home() {
                 <h2>Faltam:</h2>
                 {/* Do not prerender to avoid hydration error */}
                 {isClient && (<FlipClockCountdown 
-                    to={'2024-03-13T18:00:00.635Z'}             
+                    to={'2024-04-13T18:00:00.635Z'}             
                     labels={['DIAS', 'HORAS', 'MINUTOS', 'SEGUNDOS']}
                     className="flip-clock"
                 />)}              
@@ -286,7 +286,8 @@ export default function Home() {
                 <br />
                 <br />
                 <p>
-                  <a href='https://noivos.casar.com/monirique#/presentes'>
+                  <a href='https://noivos.casar.com/specicampos#/presentes'
+                     target="_blank" rel="noopener noreferrer">
                   <img
                     className="icons"
                     src={getImagePath('/image/gift.png')}
@@ -303,6 +304,7 @@ export default function Home() {
                     src={getImagePath('/image/qrcode-pix.png')}
                     alt="QrCode do Pix"
                     href="https://nubank.com.br/pagar/48wth/mGWKfQeR5q"
+                    target="_blank" rel="noopener noreferrer"
                   />
                   Clique aqui
                 </a>
@@ -492,7 +494,7 @@ export default function Home() {
               />
               <h2 className="titulo">Monica por Henrique</h2>
               <p>"Uma mulher linda, de largo sorriso e de um humor refinado, ótima e atenta ouvinte.</p>
-              <p>Se você procura por algum lugar novo onde comer, pode consultar seu imenso e vasto <a href='https://maps.app.goo.gl/4yBS6wbEfL3uR3AV9'>catálogo de lugares para visitar</a>, sempre haverá um cantinho da cidade não explorado que ela cuidadosamente guardou para um momento em que um passeio se faz necessário.</p>
+              <p>Se você procura por algum lugar novo onde comer, pode consultar seu imenso e vasto <a href='https://maps.app.goo.gl/4yBS6wbEfL3uR3AV9' target="_blank" rel="noopener noreferrer">catálogo de lugares para visitar</a>, sempre haverá um cantinho da cidade não explorado que ela cuidadosamente guardou para um momento em que um passeio se faz necessário.</p>
               <p>Sua paixão por cachorro não se resume ao seu maior amor, a Sophia, vai muito além, sorrindo e apontando para cada animalzinho na rua. Adora dar nomes a cachorros de portão e criar personalidades inteiras baseadas no vazio olhar que eles tem, sem julgamentos, porque depois desses anos todos juntos esse é o meu maior passatempo também.</p>
               <p>Uma mão mágica para a cozinha, parte pela sua intuição para combinar sabores e texturas e parte pelo seu lado de estar sempre aprendendo uma coisa nova nos mínimos detalhes, seja ela todos os passos de fazer um carbonara perfeito até como é extraído o açafrão das flores.</p>
               <p>Enfim, a mulher que eu escolhi para passar o resto da vida junto."</p>

@@ -24,6 +24,7 @@ import { isMobileDevice } from '../utils/mobile';
 import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown';
 import '@leenguyen/react-flip-clock-countdown/dist/index.css';
 import  DesktopIcons  from '../components/desktopIcons'
+import Wallpaper from '../components/wallpaper';
 
 const InsideModal = styled(Frame)`
   text-align: center;
@@ -32,13 +33,6 @@ const InsideModal = styled(Frame)`
   padding: 20px;
   box-shadow: none;
 `;
-
-const Wallpaper = createGlobalStyle`
-  body {
-    background: url( ${getImagePath("/image/wallpaper_flower.png")}) no-repeat center center fixed;
-    background-size: cover;
-  }
-  `;
 
 export default function Home() {
   /* Spotify Modal */

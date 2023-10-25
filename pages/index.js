@@ -17,6 +17,7 @@ import {
   Mmsys112,
   Winpopup1,
   Wab321019,
+  RecycleFull,
   User5
 } from '@react95/icons';
 import { getImagePath } from '../utils/image';
@@ -173,10 +174,33 @@ export default function Home() {
   }, [setcanShare]);
 
 
+  const DesktopIcon = styled.div({
+    marginTop: '20px',
+    marginLeft: '19px',
+    height: '70px',
+    width: '70px'
+  })
+
+  const DesktopIconText = styled.p({
+    marginTop: '4px',
+    textAlign: 'center'
+  })
+
+  const DesktopIconImage = styled(RecycleFull)`
+    display: block;
+    margin: auto;
+`;
+
   return (
     <ThemeProvider theme={'millenium'}>
       <GlobalStyle  />
       <Wallpaper />
+
+      <DesktopIcon>
+        <DesktopIconImage className="pointer" variant="32x32_4" />
+        <DesktopIconText>Lixeira</DesktopIconText>
+      </DesktopIcon>
+
       <div>
         <Head>
           <title>Henrique & Monica</title>

@@ -182,6 +182,29 @@ export default function Home() {
           <title>Henrique & Monica</title>
           <link rel="icon" href="/favicon.ico" />
           <meta name="theme-color" content="#8FB0A9"></meta>
+
+          <meta property="og:title" content="specicampos" />
+          <meta property="og:description" content="Atenção vamos casar!" />
+          <meta property="og:url" content="https://specicampos.com.br" />
+          <meta property="og:site_name" content="specicampos.com.br" />
+          <meta property="og:locale" content="pt_BR" />
+          <meta property="og:image:secure_url" content="https://specicampos.com.br/image/Monica_HenriquepxArt.png" />
+          <meta property="og:image:width" content="800" />
+          <meta property="og:image:height" content="600" />
+          <meta property="og:image:alt" content="My custom alt" />
+          <meta property="og:type" content="website" />
+
+          <meta property="twitter:title" content="specicampos" />
+          <meta property="twitter:description" content="Atenção vamos casar!" />
+          <meta property="twitter:url" content="https://specicampos.com.br" />
+          <meta property="twitter:site_name" content="specicampos.com.br" />
+          <meta property="twitter:locale" content="pt_BR" />
+          <meta property="twitter:image:secure_url" content="https://specicampos.com.br/image/Monica_HenriquepxArt.png" />
+          <meta property="twitter:image:width" content="800" />
+          <meta property="twitter:image:height" content="600" />
+          <meta property="twitter:image:alt" content="My custom alt" />
+          <meta property="twitter:type" content="website" />
+
         </Head>
 
         {/* Modal do Casamento */}

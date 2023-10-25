@@ -406,15 +406,21 @@ export default function Home() {
               },
             ]}
           >
-            <iframe
-              src="https://open.spotify.com/embed/playlist/5eGxfvGynjkVO96JtlaBPE?utm_source=generator&theme=0"
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-              title="Músicas para lembrar da Mo"
-            ></iframe>
+            <Frame boxShadow="none"
+              style={{
+                height: "352px",
+              }}>
+              <iframe
+                src="https://open.spotify.com/embed/playlist/5eGxfvGynjkVO96JtlaBPE?utm_source=generator&theme=0"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                title="Músicas para lembrar da Mo"
+              ></iframe>
+            </Frame>
+            
           </Modal>
         )}
 

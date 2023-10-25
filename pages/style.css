@@ -83,10 +83,6 @@ form {
   align-items: center;
 }
 
-label {
-  grid-column: 1 / 2;
-}
-
 .baleia {
   object-fit: cover;
   height: 200px;

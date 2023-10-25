@@ -9,15 +9,13 @@ import {
   ThemeProvider,
   GlobalStyle,
 } from '@react95/core';
-import styled from 'styled-components';
-import { createGlobalStyle } from '@xstyled/styled-components';
+import { createGlobalStyle, styled } from '@xstyled/styled-components';
 import {
   Drvspace7,
   Issue,
   Mmsys112,
   Winpopup1,
   Wab321019,
-  RecycleFull,
   User5
 } from '@react95/icons';
 import { getImagePath } from '../utils/image';
@@ -25,7 +23,7 @@ import { TASKBAR_HEIGHT } from '../utils/constants';
 import { isMobileDevice } from '../utils/mobile';
 import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown';
 import '@leenguyen/react-flip-clock-countdown/dist/index.css';
-
+import  DesktopIcons  from '../components/desktopIcons'
 
 const InsideModal = styled(Frame)`
   text-align: center;
@@ -173,33 +171,11 @@ export default function Home() {
     setcanShare(can());
   }, [setcanShare]);
 
-
-  const DesktopIcon = styled.div({
-    marginTop: '20px',
-    marginLeft: '19px',
-    height: '70px',
-    width: '70px'
-  })
-
-  const DesktopIconText = styled.p({
-    marginTop: '4px',
-    textAlign: 'center'
-  })
-
-  const DesktopIconImage = styled(RecycleFull)`
-    display: block;
-    margin: auto;
-`;
-
   return (
     <ThemeProvider theme={'millenium'}>
       <GlobalStyle  />
       <Wallpaper />
-
-      <DesktopIcon>
-        <DesktopIconImage className="pointer" variant="32x32_4" />
-        <DesktopIconText>Lixeira</DesktopIconText>
-      </DesktopIcon>
+      <DesktopIcons/>
 
       <div>
         <Head>

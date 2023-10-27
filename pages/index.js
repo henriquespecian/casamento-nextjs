@@ -9,7 +9,6 @@ import {
   ThemeProvider,
   GlobalStyle,
 } from '@react95/core';
-import { createGlobalStyle, styled } from '@xstyled/styled-components';
 import {
   Drvspace7,
   Issue,
@@ -18,21 +17,15 @@ import {
   Wab321019,
   User5
 } from '@react95/icons';
-import { getImagePath } from '../utils/image';
+import {  } from '../utils/image';
 import { TASKBAR_HEIGHT } from '../utils/constants';
 import { isMobileDevice } from '../utils/mobile';
 import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown';
 import '@leenguyen/react-flip-clock-countdown/dist/index.css';
 import  DesktopIcons  from '../components/desktopIcons'
 import Wallpaper from '../components/wallpaper';
+import { InsideModal } from '../components/insideModal';
 
-const InsideModal = styled(Frame)`
-  text-align: center;
-  height: 100%;
-  overflow: auto;
-  padding: 20px;
-  box-shadow: none;
-`;
 
 export default function Home() {
   /* Spotify Modal */
@@ -241,14 +234,14 @@ export default function Home() {
                   <img
                     width={50}
                     height={50}
-                    src={getImagePath('/image/heart.gif')}
+                    src={('/image/heart.gif')}
                     className="heart"
                   />
                   <h1 className="titulo">Monica & Henrique</h1>
                   <img
                     width={50}
                     height={50}
-                    src={getImagePath('/image/heart.gif')}
+                    src={('/image/heart.gif')}
                     className="heart"
                   />
                 </div>
@@ -258,7 +251,7 @@ export default function Home() {
                 <br />
                 <img
                   className="image-center"
-                  src={getImagePath('/image/Monica_HenriquepxArt.png')}
+                  src={('/image/Monica_HenriquepxArt.png')}
                   alt="Monica & Henrique & Sophia"
                 />
                 <br />
@@ -309,7 +302,7 @@ export default function Home() {
                      target="_blank" rel="noopener noreferrer">
                   <img
                     className="icons"
-                    src={getImagePath('/image/gift.png')}
+                    src={('/image/gift.png')}
                     alt="Lista de presente"
                   />
                     Lista de presentes do casar.com
@@ -320,7 +313,7 @@ export default function Home() {
                 <a href="https://nubank.com.br/pagar/48wth/mGWKfQeR5q">
                   <img
                     className="image-center"
-                    src={getImagePath('/image/qrcode-pix.png')}
+                    src={('/image/qrcode-pix.png')}
                     alt="QrCode do Pix"
                     href="https://nubank.com.br/pagar/48wth/mGWKfQeR5q"
                     target="_blank" rel="noopener noreferrer"
@@ -333,7 +326,7 @@ export default function Home() {
                 <br />
                 <img
                   className="icons"
-                  src={getImagePath('/image/megaphone.png')}
+                  src={('/image/megaphone.png')}
                   alt="Prestenção"
                   onClick={handleOpenInformacoesModal}
                 />
@@ -345,7 +338,7 @@ export default function Home() {
                     <a onClick={share}>
                       <img
                         className="heart"
-                        src={getImagePath('/image/whatsapp_pixel.png')}
+                        src={('/image/whatsapp_pixel.png')}
                         alt="ZAP"
                       />
                     </a>
@@ -422,14 +415,14 @@ export default function Home() {
               <img
                 width={50}
                 height={50}
-                src={getImagePath('/image/heart.gif')}
+                src={('/image/heart.gif')}
                 className="heart"
               />
               <h1>E ai vocês topam?</h1>
               <img
                 width={50}
                 height={50}
-                src={getImagePath('/image/heart.gif')}
+                src={('/image/heart.gif')}
                 className="heart"
               />            
             </InsideModal>
@@ -446,7 +439,7 @@ export default function Home() {
                   <img
                     width={200}
                     height={200}
-                    src={getImagePath('/image/baleia-sim.gif')}
+                    src={('/image/baleia-sim.gif')}
                     className="baleia" />
                 </Modal>
               }
@@ -462,7 +455,7 @@ export default function Home() {
                   <img
                     width={200}
                     height={200}
-                    src={getImagePath('/image/baleia-nao.gif')}
+                    src={('/image/baleia-nao.gif')}
                     className="baleia" />
                 </Modal>
               }
@@ -514,7 +507,7 @@ export default function Home() {
               <br />
               <img
                   className="image-center about-us"
-                  src={getImagePath('/image/monica.jpg')}
+                  src={('/image/monica.jpg')}
                   alt="Monica"
               />
               <h2 className="titulo">Monica por Henrique</h2>
@@ -529,7 +522,7 @@ export default function Home() {
               <br />              
               <img
                   className="image-center about-us"
-                  src={getImagePath('/image/henrique.jpg')}
+                  src={('/image/henrique.jpg')}
                   alt="Henrique"
               />
               <h2 className="titulo">Henrique por Monica</h2>
@@ -581,7 +574,7 @@ export default function Home() {
               <div className='polaroid'>
                 <img
                   className="dress-code"
-                  src={getImagePath('/image/dress-code-man.png')}
+                  src={('/image/dress-code-man.png')}
                   alt="Dress code homem"
                 />
                 <div className='container'>
@@ -591,7 +584,7 @@ export default function Home() {
               <div className='polaroid'>
                 <img
                   className="dress-code"
-                  src={getImagePath('/image/dress-code-woman.png')}
+                  src={('/image/dress-code-woman.png')}
                   alt="Dress code mulher"
                 />
                 <div className='container'>

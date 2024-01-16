@@ -31,7 +31,7 @@
 }
 
 .modal-spotify {
-  margin:1rem 1rem 1rem 1rem;
+  margin: 1rem 1rem 1rem 1rem;
   height: 43vh;
   width: 50vw;
   display: flex;
@@ -62,17 +62,16 @@
   margin: 1rem 1rem 1rem 1rem;
 }
 
-
-fieldset{
-  margin:1rem 1rem 1rem 1rem;
+fieldset {
+  margin: 1rem 1rem 1rem 1rem;
   height: 70vh;
   width: 65vw;
   max-width: 500px;
   display: flex;
 }
 
-input[type=text] {
-  margin:10px 10px;
+input[type="text"] {
+  margin: 10px 10px;
   grid-column: 2 / 3;
 }
 
@@ -104,13 +103,12 @@ p {
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 23px;
 }
 
 h1 {
-  font-size: 29px;
+  font-size: 27px;
 }
-
 
 div.flip-clock {
   --fcc-flip-duration: 5s; /* transition duration when flip card */
@@ -118,10 +116,10 @@ div.flip-clock {
   --fcc-digit-block-height: 60px; /* height of digit card, highly recommend in even number */
   --fcc-digit-font-size: 40px; /* font size of digit */
   --fcc-digit-color: white; /* color of digit */
-  --fcc-label-font-size: 16px;/* font size of label */
+  --fcc-label-font-size: 16px; /* font size of label */
   --fcc-label-color: black; /* color of label */
-  --fcc-background: #8FB0A9; /* background of digit card */  
-  --fcc-divider-color: hsla(0,0%,100%,0.4); /* color of divider */
+  --fcc-background: #8fb0a9; /* background of digit card */
+  --fcc-divider-color: hsla(0, 0%, 100%, 0.4); /* color of divider */
   --fcc-divider-height: 1px; /* height of divider */
   width: fit-content;
   margin: auto;
@@ -159,7 +157,7 @@ div.polaroid {
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
-  padding: 15px
+  padding: 15px;
 }
 
 div.container {

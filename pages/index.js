@@ -271,7 +271,8 @@ export default function Home() {
                 <h2>Faltam:</h2>
                 {/* Do not prerender to avoid hydration error */}
                 {isClient && (<FlipClockCountdown 
-                    to={'2024-04-13T18:00:00.635Z'}             
+                    to={'2024-04-13T18:00:00.635Z'}
+                    hideOnComplete={false}             
                     labels={['DIAS', 'HORAS', 'MINUTOS', 'SEGUNDOS']}
                     className="flip-clock"
                 />)}              

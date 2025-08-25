@@ -140,14 +140,16 @@ export default function Home() {
   };
 
   const share = async function () {
-    const url = "https://henriquespecian.github.io/casamento-nextjs/";
+    const baseUrl = typeof window !== 'undefined' ? window.location.origin + window.location.pathname : "https://henriquespecian.github.io/casamento-nextjs/";
+    const url = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
     if (navigator.canShare && navigator.canShare({ url })) {
       await navigator.share({ url });
     }
   }
 
   const can = function () {
-    const url = "https://henriquespecian.github.io/casamento-nextjs/";
+    const baseUrl = typeof window !== 'undefined' ? window.location.origin + window.location.pathname : "https://henriquespecian.github.io/casamento-nextjs/";
+    const url = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
     return (navigator.canShare && navigator.canShare({ url }));
   }
 
@@ -166,32 +168,32 @@ export default function Home() {
       <div>
         <Head>
           <title>Henrique & Monica</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="./favicon.ico" />
           <meta name="theme-color" content="#8FB0A9"></meta>
 
           <meta property="og:title" content="Monica & Henrique" />
           <meta property="og:type" content="website" />
-          <meta property="og:image" itemprop="image" content="https://specicampos.com.br/image/Monica_HenriquepxArt.png" />
-          <meta property="og:image:secure_url" itemprop="image" content="https://specicampos.com.br/Monica_HenriquepxArt.png" />
+          <meta property="og:image" itemprop="image" content="https://henriquespecian.github.io/casamento-nextjs/image/Monica_HenriquepxArt.png" />
+          <meta property="og:image:secure_url" itemprop="image" content="https://henriquespecian.github.io/casamento-nextjs/image/Monica_HenriquepxArt.png" />
           <meta property="og:image:type" content="image/png" />
-          <meta property="og:url" content="https://specicampos.com.br" />
+          <meta property="og:url" content="https://henriquespecian.github.io/casamento-nextjs" />
           <meta property="og:description" content="Atenção vamos casar!" />
           <meta property="og:locale" content="pt_BR" />
-          <meta property="og:site_name" content="specicampos.com.br" />
+          <meta property="og:site_name" content="Henrique & Monica - Casamento" />
           <meta property="og:image:width" content="800" />
           <meta property="og:image:height" content="600" />
           
           <meta property="twitter:title" content="Monica & Henrique" />
           <meta property="twitter:type" content="website" />
-          <meta property="twitter:image" itemprop="image" content="https://specicampos.com.br/image/Monica_HenriquepxArt.png" />
-          <meta property="twitter:image:secure_url" itemprop="image" content="https://specicampos.com.br/Monica_HenriquepxArt.png" />
+          <meta property="twitter:image" itemprop="image" content="https://henriquespecian.github.io/casamento-nextjs/image/Monica_HenriquepxArt.png" />
+          <meta property="twitter:image:secure_url" itemprop="image" content="https://henriquespecian.github.io/casamento-nextjs/image/Monica_HenriquepxArt.png" />
           <meta property="twitter:image:type" content="image/png" />
-          <meta property="twitter:url" content="https://specicampos.com.br" />
+          <meta property="twitter:url" content="https://henriquespecian.github.io/casamento-nextjs" />
           <meta property="twitter:description" content="Atenção vamos casar!" />
           <meta property="twitter:locale" content="pt_BR" />
-          <meta property="twitter:site_name" content="specicampos.com.br" />
+          <meta property="twitter:site_name" content="Henrique & Monica - Casamento" />
           <meta property="twitter:image:width" content="800" />
-          <meta property="twitter:image:height" content="600" />          
+          <meta property="twitter:height" content="600" />          
 
         </Head>
 
@@ -233,14 +235,14 @@ export default function Home() {
                   <img
                     width={50}
                     height={50}
-                    src={('/image/heart.gif')}
+                    src={'./image/heart.gif'}
                     className="heart"
                   />
                   <h1 className="titulo">Monica & Henrique</h1>
                   <img
                     width={50}
                     height={50}
-                    src={('/image/heart.gif')}
+                    src={'./image/heart.gif'}
                     className="heart"
                   />
                 </div>
@@ -250,7 +252,7 @@ export default function Home() {
                 <br />
                 <img
                   className="image-center"
-                  src={('/image/Monica_HenriquepxArt.png')}
+                  src={'./image/Monica_HenriquepxArt.png'}
                   alt="Monica & Henrique & Sophia"
                 />
                 <br />
@@ -302,7 +304,7 @@ export default function Home() {
                      target="_blank" rel="noopener noreferrer">
                   <img
                     className="icons"
-                    src={('/image/gift.png')}
+                    src={'./image/gift.png'}
                     alt="Lista de presente"
                   />
                     Lista de presentes do casar.com
@@ -313,7 +315,7 @@ export default function Home() {
                 <a href="https://nubank.com.br/pagar/48wth/mGWKfQeR5q">
                   <img
                     className="image-center"
-                    src={('/image/qrcode-pix.png')}
+                    src={'./image/qrcode-pix.png'}
                     alt="QrCode do Pix"
                     href="https://nubank.com.br/pagar/48wth/mGWKfQeR5q"
                     target="_blank" rel="noopener noreferrer"
@@ -326,7 +328,7 @@ export default function Home() {
                 <br />
                 <img
                   className="icons"
-                  src={('/image/megaphone.png')}
+                  src={'./image/megaphone.png'}
                   alt="Prestenção"
                   onClick={handleOpenInformacoesModal}
                 />
@@ -338,7 +340,7 @@ export default function Home() {
                     <a onClick={share}>
                       <img
                         className="heart"
-                        src={('/image/whatsapp_pixel.png')}
+                        src={'./image/whatsapp_pixel.png'}
                         alt="ZAP"
                       />
                     </a>
@@ -415,14 +417,14 @@ export default function Home() {
               <img
                 width={50}
                 height={50}
-                src={('/image/heart.gif')}
+                src={'./image/heart.gif'}
                 className="heart"
               />
               <h1>E ai vocês topam?</h1>
               <img
                 width={50}
                 height={50}
-                src={('/image/heart.gif')}
+                src={'./image/heart.gif'}
                 className="heart"
               />            
             </InsideModal>
@@ -439,7 +441,7 @@ export default function Home() {
                   <img
                     width={200}
                     height={200}
-                    src={('/image/baleia-sim.gif')}
+                    src={'./image/baleia-sim.gif'}
                     className="baleia" />
                 </Modal>
               }
@@ -455,7 +457,7 @@ export default function Home() {
                   <img
                     width={200}
                     height={200}
-                    src={('/image/baleia-nao.gif')}
+                    src={'./image/baleia-nao.gif'}
                     className="baleia" />
                 </Modal>
               }
@@ -507,7 +509,7 @@ export default function Home() {
               <br />
               <img
                   className="image-center about-us"
-                  src={('/image/monica.jpg')}
+                  src={'./image/monica.jpg'}
                   alt="Monica"
               />
               <h2 className="titulo">Monica por Henrique</h2>
@@ -522,7 +524,7 @@ export default function Home() {
               <br />              
               <img
                   className="image-center about-us"
-                  src={('/image/henrique.jpg')}
+                  src={'./image/henrique.jpg'}
                   alt="Henrique"
               />
               <h2 className="titulo">Henrique por Monica</h2>
@@ -574,7 +576,7 @@ export default function Home() {
               <div className='polaroid'>
                 <img
                   className="dress-code"
-                  src={('/image/dress-code-man.png')}
+                  src={'./image/dress-code-man.png'}
                   alt="Dress code homem"
                 />
                 <div className='container'>
@@ -584,7 +586,7 @@ export default function Home() {
               <div className='polaroid'>
                 <img
                   className="dress-code"
-                  src={('/image/dress-code-woman.png')}
+                  src={'./image/dress-code-woman.png'}
                   alt="Dress code mulher"
                 />
                 <div className='container'>

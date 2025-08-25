@@ -17,7 +17,6 @@ import {
   Wab321019,
   User5
 } from '@react95/icons';
-import {  } from '../utils/image';
 import { TASKBAR_HEIGHT } from '../utils/constants';
 import { isMobileDevice } from '../utils/mobile';
 import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown';

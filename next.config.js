@@ -11,6 +11,7 @@ const nextConfig = {
   images: {
     disableStaticImages: true
   },
+  output: 'export',
   basePath: isProd ? '/casamento-nextjs' : undefined,
 };
 
